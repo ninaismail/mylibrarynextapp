@@ -1,10 +1,10 @@
 "use client"
 import Image from "next/image";
 import useFetch from "../hooks/useFetch";
-type Result = {
+type BookDetailsProps = {
   id: number;
 };
-export default function BookDetails({ id }: Result) {
+export default function BookDetails({ id }: BookDetailsProps) {
   const { data:book, isLoading, error } = useFetch(`books/${id}`)
 
   return (
