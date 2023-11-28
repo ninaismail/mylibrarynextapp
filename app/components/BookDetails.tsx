@@ -22,7 +22,7 @@ export default function BookDetails({ id }: BookDetailsProps) {
           <p className="text-sm min-h-[40px]">{book.description}</p>
           <div className="flex items-center justify-between">
             <span className="text-green-500 font-semibold">${book.deposit}</span>
-            <button className="bg-primary hover:brightness-125 text-white border-[3px] brder-primary text-sm font-bold py-2 px-4 rounded">Book it</button>
+            <button className="bg-primary hover:brightness-125 text-white border brder-primary text-sm font-bold py-2 px-4 rounded">Book it</button>
           </div>
       </div></>}
       <p className="text-red-700">{error && error}</p>      

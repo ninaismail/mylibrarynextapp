@@ -33,9 +33,9 @@ export default function Book({book}: BookProps) {
       <p className="text-sm min-h-[40px]">{book.brief}</p>
       <div className="flex items-center justify-between">
       <span className="text-green-500 font-semibold">${book.deposit}</span>
-      <button className="bg-primary hover:brightness-125 text-white border-[3px] brder-primary text-sm font-bold py-2 px-4 rounded">Book it</button>
+      <button className="bg-primary hover:brightness-125 text-white border brder-primary text-sm font-bold py-2 px-4 rounded">Book it</button>
       {/* Include this if you want to navigate to a detailed view */}
-      <Link href={`/books/${book.id}`} prefetch={false} className="bg-white hover:bg-[#fff7f7] text-primary border-[3px] brder-primary text-sm font-bold py-2 px-4 rounded">
+      <Link href={`/books/${book.id}`} prefetch={false} className="bg-white hover:bg-[#fff7f7] text-primary border brder-primary text-sm font-bold py-2 px-4 rounded">
         Open
       </Link>
       </div>
