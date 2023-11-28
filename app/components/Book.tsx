@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type BookProps = {
+type BookData = {
   id: string;
   title: string;
   author: string;
@@ -14,11 +14,11 @@ type BookProps = {
   is_available: Boolean;
   date_of_release: string;
 }
-type Book = {
-  book: BookProps;
+type BookProps = {
+  book: BookData;
 }
 
-export default function Book({book}: Book) {
+export default function Book({book}: BookProps) {
   return (
   <li key={book.id} className="w-64 h-full bg-white shadow-lg rounded-lg p-4 transition-transform transform hover:scale-105">
     <div className="relative aspect-[3/4] object-cover rounded-t-lg">
