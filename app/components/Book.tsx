@@ -1,17 +1,18 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 
 type BookProps = {
-    id: string;
-    title: string;
-    author: string;
-    brief: string;
-    description: string;
-    cover_image: string;
-    images: string[];
-    deposit: number;
-    is_available: Boolean;
-    date_of_release: string;
+  id: string;
+  title: string;
+  author: string;
+  brief: string;
+  description: string;
+  cover_image: string;
+  images: string[];
+  deposit: number;
+  is_available: Boolean;
+  date_of_release: string;
 }
 type Book = {
   book: BookProps;
@@ -20,7 +21,7 @@ type Book = {
 export default function Book({book}: Book) {
   return (
   <li key={book.id} className="w-64 h-full bg-white shadow-lg rounded-lg p-4 transition-transform transform hover:scale-105">
-      <div className="relative aspect-[3/4] object-cover rounded-t-lg">
+    <div className="relative aspect-[3/4] object-cover rounded-t-lg">
         <Image
         src={book.cover_image}
         alt={book.title}
@@ -32,11 +33,11 @@ export default function Book({book}: Book) {
       <p className="text-sm min-h-[40px]">{book.brief}</p>
       <div className="flex items-center justify-between">
       <span className="text-green-500 font-semibold">${book.deposit}</span>
-      <button className="bg-[#E97451] hover:brightness-125 text-white text-sm font-bold py-2 px-4 rounded">Book it</button>
+      <button className="bg-primary hover:brightness-125 text-white border-[3px] brder-primary text-sm font-bold py-2 px-4 rounded">Book it</button>
       {/* Include this if you want to navigate to a detailed view */}
-      {/* <Link to={`${id}`} className="bg-brown-500 hover:bg-brown-700 text-white text-sm font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:border-blue-300 transition">
-      View Product
-      </Link> */}
+      <Link href={`/books/${book.id}`} prefetch={false} className="bg-white hover:bg-[#fff7f7] text-primary border-[3px] brder-primary text-sm font-bold py-2 px-4 rounded">
+        Open
+      </Link>
       </div>
     </div>
   </li>

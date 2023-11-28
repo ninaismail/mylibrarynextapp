@@ -15,6 +15,9 @@ const config: Config = {
       },
       aspectRatio: {
         '3 / 4': '3/4'
+      },
+      colors: {
+        'primary': '#E97451'
       }
     },
   },
