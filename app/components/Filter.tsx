@@ -1,10 +1,9 @@
+import LocationDropdown from "./LocationDropdown";
 
 export default function Filter() {
   return (
     <form className="flex items-center justify-between w-10/12 h-[34px] mt-[20px] mx-auto font-zillaslab bg-white text-gray-500 border-0 rounded">
-      <button className="w-1/4 flex justify-between items-center gap-[4px] h-full px-4 border-e">
-      <span>🗺️  Literature</span><span>⋮</span>
-      </button>
+        <LocationDropdown/>
       <input
         type="text"
         id="search"
