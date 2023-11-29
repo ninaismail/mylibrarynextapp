@@ -12,6 +12,7 @@ type BookData = {
   images: string[];
   deposit: number;
   is_available: Boolean;
+  literature_origin: string;
   date_of_release: string;
 }
 type BookProps = {
