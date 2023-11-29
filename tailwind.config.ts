@@ -8,16 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        "zillaslab": "var(--font-zillaslab)",
       },
       aspectRatio: {
         '3 / 4': '3/4'
       },
       colors: {
-        'primary': '#E97451'
+        'primary': '#dc8920',
+        'background': '#f2dcb1'
       }
     },
   },
