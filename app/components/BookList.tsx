@@ -12,9 +12,9 @@ const BookList = () => {
   const origin = params.get("origin") as string
   const search = params.get("search") as string
   
-  let {data,isLoading,error} = useFilterLocation(origin)
-  data = useSearch(search)
-  console.log("11",data.data)
+  const {data,isLoading,error} = useFilterLocation(origin)
+  data.value = useSearch(search)
+  console.log("11",data)
 
   return (
     <>
