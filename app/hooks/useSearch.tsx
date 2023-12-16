@@ -15,12 +15,14 @@ type BookData = {
     date_of_release: string;
 }
 type BookProps = {
-    book: BookData;
+  book: BookData;
 }
-export default function useFilterLocation (item:string) {
+export default function useSearch(item:string) {
     const { data,isLoading,error } = useFetch("books")
     const result:BookProps = useMemo(() => {
-        return data.filter((data:BookData) => data.literature_origin === item);
+      return data.filter((dataitem:BookData) => {
+        return dataitem.title.toLowerCase().includes(item?.toLowerCase())
+      })
     }, [data, item])
     console.log(result)
     return item ?  {data:result}  : {data,isLoading,error};
