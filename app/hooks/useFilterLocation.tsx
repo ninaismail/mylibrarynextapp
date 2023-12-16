@@ -1,7 +1,6 @@
 "use client"
 
 import { useMemo } from "react";
-import useFetch from "./useFetch"
 type BookData = {
     id: string;
     title: string;
@@ -15,14 +14,10 @@ type BookData = {
     literature_origin: string;
     date_of_release: string;
 }
-type BookProps = {
-    book: BookData;
-}
-export default function useFilterLocation (item:string) {
-    const { data,isLoading,error } = useFetch("books")
-    const result:BookProps = useMemo(() => {
+export default function useFilterLocation(item:string,data:any) {
+    const result:BookData[] = useMemo(() => {
         return data.filter((data:BookData) => data.literature_origin === item);
     }, [data, item])
     console.log(result)
-    return item ?  {data:result}  : {data,isLoading,error};
+    return {data:result};
 };
